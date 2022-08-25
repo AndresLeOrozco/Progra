@@ -1,7 +1,7 @@
 public class main {
     public static void main(String[] args) {
-        Cifrado palabra = new Cifrado();
+        Cifrado palabrinha = new Cifrado();
 
-        System.out.println(palabra.CifrarPalabra(2,"Pedro"));
+        System.out.println(palabrinha.CifrarPalabra(2,"Pedro"));
     }
 }

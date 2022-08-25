@@ -12,11 +12,11 @@ Cifrado(){
 }
  public String CifrarPalabra(int espacios,String palabra){
     String cif = "";
-    char[] vec = new char[20];
+    char[] vec = new char[palabra.length()];
     int k = 0;
     int LargoPalabra = palabra.length();
     while(k < LargoPalabra) {
-        vec[k] = cif.charAt(k);
+        vec[k] = palabra.charAt(k);
         k++;
     }
     int can = 0;
@@ -26,18 +26,26 @@ Cifrado(){
                 if(i + espacios > 25){
                     int cNueva = (i+espacios)-25;
                     vec[can] = abecedario[cNueva];
+                    break;
                 }
-                if(i + espacios < 25)
-                    vec[can] = abecedario[i+espacios];
+                else
+                if(i + espacios < 25) {
+                    vec[can] = abecedario[i + espacios];
+                    break;
+                }
             }
 
             if (vec[can] == abecedarioMayus[i]){
                 if(i + espacios > 25){
                     int cNueva = (i+espacios)-25;
                     vec[can] = abecedarioMayus[cNueva];
+                    break;
                 }
-                if(i + espacios < 25)
-                    vec[can] = abecedarioMayus[i+espacios];
+                else
+                if(i + espacios < 25) {
+                    vec[can] = abecedarioMayus[i + espacios];
+                    break;
+                }
             }
         }
         can++;
